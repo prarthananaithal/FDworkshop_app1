@@ -1,0 +1,20 @@
+<!-- substringapp/templates/substringapp/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Substring Combinations</title>
+</head>
+<body>
+    <h1>Enter a Word to Find Substring Combinations</h1>
+    <form method="get" action="{% url 'substring_combinations' %}">
+        <label for="word">Word:</label>
+        <input type="text" id="word" name="word" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if combinations %}
+        <h2>Combinations:</h2>
+        <p>{{ combinations|join:", " }}</p>
+    {% endif %}
+</body>
+</html>
